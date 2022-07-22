@@ -1,0 +1,49 @@
+
+@font-face {
+    font-family: 'Moon Dance';
+    src: url(./Moon_Dance/MoonDance-Regular.ttf) format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
+}
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+#content {
+    background: no-repeat url(./pexels-rachel-claire-4577860.jpg) border-box;
+    background-position: 50% 72%;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    
+    display: grid;
+    grid: min-content 1fr / 1fr;
+    gap: 25px;
+    place-items: center;
+}
+
+#title {
+    width: 100vw;
+    height: 15vh;
+    box-shadow: inset 0px 75px 20px -20px #000;
+    display: flex;
+    justify-content: center;
+}
+#title > h1 {
+    font-size: 7rem;
+    font-weight: normal;
+    color: white;
+    text-align: center;
+    width: min-content;
+    white-space: nowrap;
+
+    transform: rotate(2deg) translateY(-15%);
+    font-family: 'Moon Dance', monospace;
+}
+
+
