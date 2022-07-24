@@ -3,36 +3,49 @@ const generate = (function() {
     const _base = function() {
         // CONTENT
         const body = document.querySelector('body');
-        const content = document.createElement('div');
-        content.id = 'content'
-        body.append(content);
 
-        // HEADER SECTION
-        const header = document.createElement('header');
+        if (!document.querySelector('#content')) {
+        
+            const content = document.createElement('div');
+            content.id = 'content'
+            body.appendChild(content);
 
-        const title = document.createElement('div');
-        title.id = 'title';
-        const titleText = document.createElement('h1');
-        titleText.textContent = 'Sin Azucar';
-        title.append(titleText);
+            // HEADER SECTION
+            const header = document.createElement('header');
 
-        const tabs = document.createElement('div');
-        tabs.id = 'tabs';
-        const tabHome = document.createElement('div');
-        tabHome.textContent = 'Home';
-        const tabMenu = document.createElement('div');
-        tabMenu.textContent = 'Menu';
-        const tabAbout = document.createElement('div');
-        tabAbout.textContent = 'About';
-        tabs.append(tabHome, tabMenu, tabAbout);
+            const title = document.createElement('div');
+            title.id = 'title';
+            const titleText = document.createElement('h1');
+            titleText.textContent = 'Sin Azucar';
+            title.append(titleText);
 
-        header.append(title, tabs);
+            const tabs = document.createElement('div');
+            tabs.id = 'tabs';
+            const tabHome = document.createElement('div');
+            tabHome.textContent = 'Home';
+            const tabMenu = document.createElement('div');
+            tabMenu.textContent = 'Menu';
+            const tabAbout = document.createElement('div');
+            tabAbout.textContent = 'Contact';
+            tabs.append(tabHome, tabMenu, tabAbout);
+
+            header.append(title, tabs);
+            content.append(header);
+        }
 
         // MAIN (here it is passed to each tab)
-        const main = document.createElement('main');
+        if (document.querySelector('main')) {
+            console.log('test')
+            const main = document.querySelectorAll('main div');
+            main.forEach(each => each.remove());
+        }
+        else {
+            const main = document.createElement('main');
 
-        // FINAL APPEND
-        content.append(header, main);
+            // FINAL APPEND
+            content.append(main);
+        }
+        
     }
 
     const home = function() {
@@ -72,8 +85,13 @@ const generate = (function() {
 
     }
 
+    const menu = function() {
+        _base();
+        console.log('menu function')
+    }
 
-    return { home };
+
+    return { home, menu };
 })();
 
 export default generate;
