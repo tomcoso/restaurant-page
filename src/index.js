@@ -1,7 +1,7 @@
 import './style.css';
 import generate from './generate.js';
 
-generate.home();
+generate.menu();
 
 const tabBtn = document.querySelectorAll('#tabs div');
 tabBtn.forEach(each => each.addEventListener('click', function(event) {

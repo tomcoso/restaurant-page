@@ -87,8 +87,42 @@ const generate = (function() {
 
     const menu = function() {
         _base();
-        console.log('menu function')
-    }
+        const main = document.querySelector('main');
+
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('wrapper');
+
+        // Card
+        function _createCard(name, desc, url) {
+            
+
+            const card = document.createElement('div');
+            card.classList.add('card');
+
+            const img = document.createElement('div');
+            img.classList.add('item-img');
+            img.setAttribute('style', 
+                `background-image: url(${url}); background-size: 100%;`)
+
+            const title = document.createElement('p');
+            title.classList.add('title');
+            title.textContent = name;
+
+            const description = document.createElement('p');
+            description.classList.add('desc');
+            description.textContent = desc;
+
+            card.append(img, title, description);
+
+            wrapper.append(card);
+        };
+
+        _createCard('Coconut Oatmeal with Grilled Pear', 'Organic oats cooked with coconut milk and cinnamon, topped with poppy seeds, coconut flakes and a delicious grilled half pear.', '../src/oatmeal.png');
+        _createCard('Cinnamon Roll', 'Delicious housemade cinnamon roll with our special touch of aniseed', '../src/cinnamon-roll.png');
+        _createCard('Falafel Sandwich', 'Morrocan falafel on house made organic rye bread, with grilled tomatoes and smoked pumpkin and paprika, topped with our vegan cream cheese', '../src/falafel-sandwich.png');
+
+        main.append(wrapper);
+    };
 
 
     return { home, menu };

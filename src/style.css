@@ -76,6 +76,7 @@ header {
     text-align: center;
     width: min-content;
     white-space: nowrap;
+    z-index: 0;
 
     transform: rotate(2deg) translateY(-25%);
     font-family: 'Moon Dance', monospace;
@@ -87,6 +88,7 @@ header {
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.20);
     width: 80%;
+    z-index: 1;
 
     font-family: 'Moon Dance';
     font-size: var(--tabs-font);
@@ -148,4 +150,48 @@ main .info {
     line-height: 2rem;
     margin-bottom: 3rem;
     padding: 1rem;
+}
+
+main .wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 4% 0;
+
+    display: grid;
+    grid: repeat(auto-fit, 150px) / 1fr;
+    place-items: center;
+    gap: 10%;
+}
+
+main .card {
+    width: 90%;
+    height: 150px;
+
+    display: grid;
+    grid: repeat(2, min-content) / min-content 1fr;
+    gap: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.6);
+}
+.card .item-img {
+    height: 150px;
+    width: 150px;
+
+    outline: 2px solid #000;
+    border-radius: 5%;
+
+    grid-row: 1 / 3;
+}
+
+.card .title {
+    font-family: 'Moon Dance';
+    font-size: var(--tabs-font);
+    margin-bottom: -20%;
+}
+
+.card .desc {
+    font-family: 'Montserrat Alternates';
+    font-weight: 500;
+    font-size: var(--text-font);
 }
