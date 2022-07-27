@@ -177,7 +177,8 @@ const generate = (function() {
         map.setAttribute('frameborder', "0");
         map.setAttribute('style',"border:0");
         map.setAttribute('referrerpolicy', "no-referrer-when-downgrade");
-        map.setAttribute('src', "https://www.google.com/maps/embed/v1/place?key=AIzaSyCxN_kmSmLP-jUeSSvgGm75_8xGRkORNCg&q=Obelisco,Buenos+Aires,Argentina");
+        map.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0167132768415!2d-58.383759085114846!3d-34.603738880459595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1sen!2ses!4v1658933736418!5m2!1sen!2ses");
+        map.setAttribute('loading',"lazy");
 
         wrapper.append(info, map);
 
