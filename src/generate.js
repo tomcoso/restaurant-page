@@ -1,3 +1,7 @@
+import oatmeal from './oatmeal.png';
+import falafel from './falafel-sandwich.png';
+import cinnamon from './cinnamon-roll.png';
+import coffee from './coffee-icon.png';
 const generate = (function() {
 
     const _base = function() {
@@ -74,7 +78,7 @@ const generate = (function() {
         const image = document.createElement('div');
         image.classList.add('image');
         const img = document.createElement('img');
-        img.src = "../src/coffee-icon.png";
+        img.src = coffee;
         img.alt = "Coffee Beans";
         image.append(img);
 
@@ -82,7 +86,6 @@ const generate = (function() {
 
         // final append
         main.append(display, aboutPanel);
-
     }
 
     const menu = function() {
@@ -117,9 +120,12 @@ const generate = (function() {
             wrapper.append(card);
         };
 
-        _createCard('Coconut Oatmeal with Grilled Pear', 'Organic oats cooked with coconut milk and cinnamon, topped with poppy seeds, coconut flakes and a delicious grilled half pear.', '../src/oatmeal.png');
-        _createCard('Cinnamon Roll', 'Delicious housemade cinnamon roll with our special touch of aniseed', '../src/cinnamon-roll.png');
-        _createCard('Falafel Sandwich', 'Morrocan falafel on house made organic rye bread, with grilled tomatoes and smoked pumpkin and paprika, topped with our vegan cream cheese', '../src/falafel-sandwich.png');
+        _createCard('Coconut Oatmeal with Grilled Pear', 'Organic oats cooked with coconut milk and cinnamon, topped with poppy seeds, coconut flakes and a delicious grilled half pear.', oatmeal);
+        _createCard('Cinnamon Roll', 'Delicious housemade cinnamon roll with our special touch of aniseed', cinnamon);
+        _createCard('Falafel Sandwich', 'Morrocan falafel on house made organic rye bread, with grilled tomatoes and smoked pumpkin and paprika, topped with our vegan cream cheese', falafel);
+        _createCard('Coconut Oatmeal with Grilled Pear', 'Organic oats cooked with coconut milk and cinnamon, topped with poppy seeds, coconut flakes and a delicious grilled half pear.', oatmeal);
+        _createCard('Cinnamon Roll', 'Delicious housemade cinnamon roll with our special touch of aniseed', cinnamon);
+        _createCard('Falafel Sandwich', 'Morrocan falafel on house made organic rye bread, with grilled tomatoes and smoked pumpkin and paprika, topped with our vegan cream cheese', falafel);
 
         main.append(wrapper);
     };
