@@ -39,7 +39,6 @@ const generate = (function() {
 
         // MAIN (here it is passed to each tab)
         if (document.querySelector('main')) {
-            console.log('test')
             const main = document.querySelectorAll('main div');
             main.forEach(each => each.remove());
         }
@@ -130,8 +129,63 @@ const generate = (function() {
         main.append(wrapper);
     };
 
+    const contact = function() {
+        _base();
+        
+        const main = document.querySelector('main');
 
-    return { home, menu };
+        const wrapper = document.createElement('div');
+        wrapper.classList.add('wrapper');
+        
+        const info = document.createElement('div');
+        info.classList.add('info');
+
+        const address = document.createElement('div');
+        const addTitle = document.createElement('span');
+        addTitle.textContent = 'Address:';
+        const addInfo = document.createElement('span');
+        addInfo.textContent = 'Av. 9 de Julio s/n, C1043 CABA, Argentina';
+        address.append(addTitle, addInfo);
+
+        const email = document.createElement('div');
+        const emTitle = document.createElement('span');
+        emTitle.textContent = 'Email:';
+        const emInfo = document.createElement('span');
+        emInfo.textContent = 'sinazucar0@nomail.com';
+        email.append(emTitle, emInfo);
+
+        const phone = document.createElement('div');
+        const phTitle = document.createElement('span');
+        phTitle.textContent = 'Phone number:';
+        const phInfo = document.createElement('span');
+        phInfo.textContent = '(+123) 000 1234';
+        phone.append(phTitle, phInfo);
+
+        const time = document.createElement('div');
+        const timeTitle = document.createElement('span');
+        timeTitle.textContent = 'Opening times:';
+        const timeInfo = document.createElement('span');
+        timeInfo.innerHTML = 'Monday-Thursday : 10am-11pm<br>Friday-Sunday : 9am-12pm';
+        time.append(timeTitle, timeInfo);
+
+        info.append(address, email, time, phone);
+
+
+        const map = document.createElement('iframe');
+        map.setAttribute('width', '350');
+        map.setAttribute('height', "350");
+        map.setAttribute('frameborder', "0");
+        map.setAttribute('style',"border:0");
+        map.setAttribute('referrerpolicy', "no-referrer-when-downgrade");
+        map.setAttribute('src', "https://www.google.com/maps/embed/v1/place?key=AIzaSyCxN_kmSmLP-jUeSSvgGm75_8xGRkORNCg&q=Obelisco,Buenos+Aires,Argentina");
+
+        wrapper.append(info, map);
+
+        main.append(wrapper);
+    }
+
+
+    return { home, menu, contact };
 })();
 
 export default generate;

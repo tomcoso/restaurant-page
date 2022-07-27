@@ -1,12 +1,11 @@
 import './style.css';
 import generate from './generate.js';
 
-generate.menu();
+generate.contact();
 
 const tabBtn = document.querySelectorAll('#tabs div');
-tabBtn.forEach(each => {if (each.textContent === 'Menu') {each.classList.add('current')}})
+tabBtn.forEach(each => {if (each.textContent === 'Contact') {each.classList.add('current')}})
 tabBtn.forEach(each => each.addEventListener('click', function(event) {
-    console.log(event.target.textContent)
     switch (event.target.textContent) {
         case 'Home' :
             generate.home();
