@@ -16,10 +16,12 @@
     :root{
         --title-font: 7rem;
         --tabs-font: 2.4rem;
-        --info-font: 1.5rem;
+        --info-font: 1rem;
         --display-font: 2.5rem;
         --header-gap: 30px;
         --about-grid: min-content / 3fr 2fr;
+        --contact-grid: 1fr / 1fr 1fr;
+        --contact-info-grid: 1fr / 13vw 1fr;
 
         --menu-img-row: 1 / 3;
         --menu-desc-column: 2 / 3;
@@ -30,7 +32,7 @@
     :root{
         --title-font: max(20vw, 4.5rem);
         --tabs-font: max(8vw, 1.5rem);
-        --info-font: 5vw;
+        --info-font: 4vw;
         --display-font: max(8vw, 1.5rem);
         --header-gap: min(2vh, 10px);
     }
@@ -40,6 +42,13 @@
         --about-grid: 2fr 1fr / 1fr;
         --menu-img-row: 1 / 2;
         --menu-desc-column: 1 / 3;
+
+        --contact-info-grid: repeat(2, min-content) / 1fr;
+    }
+}
+@media (max-width: 1000px) {
+    :root {
+        --contact-grid: repeat(2, min-content) / 1fr;
     }
 }
 
@@ -160,7 +169,7 @@ main .about-panel .image img {
     height: 280px;
 }
 
-main .info {
+main .about-panel .info {
     font-size: var(--info-font);
     font-family: 'Montserrat Alternates';
     font-weight: 500;
@@ -213,4 +222,49 @@ main .card {
     font-size: 1rem;
 
     grid-column: var(--menu-desc-column);
+}
+
+main .contact-wrapper {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid: var(--contact-grid);
+    place-items: center;
+}
+
+.contact-wrapper .info {
+    display: grid;
+    grid: repeat(auto-fit, 1fr) / 1fr;
+    gap: 8vh;
+    place-content: center;
+
+    width: min-content;
+    height: 100%;
+    padding: 1rem;
+}
+
+.contact-wrapper .info div{
+    font-size: var(--info-font);
+    font-family: 'Montserrat Alternates';
+    font-weight: 800;
+    line-height: 2rem;
+    white-space: nowrap;
+    width: 100%;
+
+    display: grid;
+    grid: var(--contact-info-grid);
+    gap: min(3vw, 1rem);
+}
+.contact-wrapper .info div span:last-child {
+    font-weight: 500;
+}
+.contact-wrapper .info div:first-child span:last-child{
+    white-space: normal;
+}
+
+.contact-wrapper .iframe {
+    width: max(200px, 90%);
+    height: max(300px, 90%);
+    min-height: 300px;
 }

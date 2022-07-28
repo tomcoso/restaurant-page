@@ -134,8 +134,8 @@ const generate = (function() {
         
         const main = document.querySelector('main');
 
-        const wrapper = document.createElement('div');
-        wrapper.classList.add('wrapper');
+        const contactWrapper = document.createElement('div');
+        contactWrapper.classList.add('contact-wrapper');
         
         const info = document.createElement('div');
         info.classList.add('info');
@@ -165,24 +165,26 @@ const generate = (function() {
         const timeTitle = document.createElement('span');
         timeTitle.textContent = 'Opening times:';
         const timeInfo = document.createElement('span');
-        timeInfo.innerHTML = 'Monday-Thursday : 10am-11pm<br>Friday-Sunday : 9am-12pm';
+        timeInfo.innerHTML = 'Monday-Thursday: 10am-11pm<br>Friday-Sunday: 9am-12pm';
         time.append(timeTitle, timeInfo);
 
         info.append(address, email, time, phone);
 
-
+        const mapWrap = document.createElement('div');
+        mapWrap.classList.add('iframe');
         const map = document.createElement('iframe');
-        map.setAttribute('width', '350');
-        map.setAttribute('height', "350");
+        map.setAttribute('width', '100%');
+        map.setAttribute('height', '100%');
         map.setAttribute('frameborder', "0");
         map.setAttribute('style',"border:0");
         map.setAttribute('referrerpolicy', "no-referrer-when-downgrade");
         map.setAttribute('src', "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0167132768415!2d-58.383759085114846!3d-34.603738880459595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1sen!2ses!4v1658933736418!5m2!1sen!2ses");
         map.setAttribute('loading',"lazy");
+        mapWrap.append(map);
 
-        wrapper.append(info, map);
+        contactWrapper.append(info, mapWrap);
 
-        main.append(wrapper);
+        main.append(contactWrapper);
     }
 
 
