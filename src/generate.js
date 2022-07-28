@@ -2,6 +2,7 @@ import oatmeal from './oatmeal.png';
 import falafel from './falafel-sandwich.png';
 import cinnamon from './cinnamon-roll.png';
 import coffee from './coffee-icon.png';
+import favicon from './favicon.ico';
 const generate = (function() {
 
     const _base = function() {
@@ -9,6 +10,12 @@ const generate = (function() {
         const body = document.querySelector('body');
 
         if (!document.querySelector('#content')) {
+
+            const htmlHead = document.querySelector('head');
+            const fav = document.createElement('link');
+            fav.setAttribute('href', favicon);
+            fav.setAttribute('rel', 'icon');
+            htmlHead.append(fav);
         
             const content = document.createElement('div');
             content.id = 'content'
