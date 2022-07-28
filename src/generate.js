@@ -55,6 +55,8 @@ const generate = (function() {
         _base();
 
         const main = document.querySelector('main');
+        const homeWrapper = document.createElement('div');
+        homeWrapper.classList.add('home-wrapper');
 
         // display
         const display = document.createElement('div');
@@ -84,7 +86,8 @@ const generate = (function() {
         aboutPanel.append(info, image);
 
         // final append
-        main.append(display, aboutPanel);
+        homeWrapper.append(display, aboutPanel);
+        main.append(homeWrapper);
     }
 
     const menu = function() {

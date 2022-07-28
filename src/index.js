@@ -1,10 +1,10 @@
 import './style.css';
 import generate from './generate.js';
 
-generate.contact();
+generate.home();
 
 const tabBtn = document.querySelectorAll('#tabs div');
-tabBtn.forEach(each => {if (each.textContent === 'Contact') {each.classList.add('current')}})
+tabBtn.forEach(each => {if (each.textContent === 'Home') {each.classList.add('current')}})
 tabBtn.forEach(each => each.addEventListener('click', function(event) {
     switch (event.target.textContent) {
         case 'Home' :

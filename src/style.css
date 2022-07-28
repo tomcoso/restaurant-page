@@ -19,7 +19,7 @@
         --info-font: 1rem;
         --display-font: 2.5rem;
         --header-gap: 30px;
-        --about-grid: min-content / 3fr 2fr;
+        --about-grid: 1fr / 3fr 2fr;
         --contact-grid: 1fr / 1fr 1fr;
         --contact-info-grid: 1fr / 13vw 1fr;
 
@@ -123,6 +123,11 @@ header {
     color: white;
 }
 
+#tabs div {
+    text-shadow: 0px 0px 20px white;
+    cursor: pointer
+}
+
 main {
     background-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.6);
@@ -143,7 +148,16 @@ main::-webkit-scrollbar {
     display: none;
 }
 
+main .home-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
 
+main .display {
+    padding: 1rem;
+}
 main .display > div {
     font-size: var(--display-font);
     font-family: 'Montserrat Alternates';
